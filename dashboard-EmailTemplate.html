@@ -1,0 +1,739 @@
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8" />
+  <title>Armies Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    /* 隐藏滚动条 */
+    .layout-content-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .bg-center {
+      position: relative;
+      /* width: 10rem;
+      /* 设置合适的宽度 */
+      /* height: 10rem;
+      设置合适的高度 */
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      /* 将下拉框放置在.bg-center下方 */
+      height: 100px;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid rgb(140, 140, 143);
+      width: 90px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      /* 调整下拉框宽度 */
+      text-align: center;
+      color: black;
+      /* 调整文字颜色 */
+      z-index: 10;
+      /* 确保位于底层内容上方 */
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #000099;
+      color: #fffafa;
+      /* 添加鼠标悬停效果 */
+    }
+
+    .La-center {
+      position: relative;
+      /* width: 10rem;
+      /* 设置合适的宽度 */
+      /* height: 10rem;
+      设置合适的高度 */
+    }
+
+    .Language-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      /* 将下拉框放置在.La-center下方 */
+      height: 91.5px;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid rgb(140, 140, 143);
+      width: 90px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      /* 调整下拉框宽度 */
+      text-align: center;
+      color: black;
+      /* 调整文字颜色 */
+      z-index: 10;
+      /* 确保位于底层内容上方 */
+    }
+
+    .Language-content a {
+      display: block;
+      padding: 0.5rem 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .Language-content a:hover {
+      background-color: #000099;
+      color: #fffafa;
+      /* 添加鼠标悬停效果 */
+      border-bottom-left-radius: 0.5px;
+      border-bottom-right-radius: 0.5px;
+    }
+
+    .logo-container {
+      width: 120px;
+      /* 容器的宽度 */
+      height: 56px;
+      /* 容器的高度 */
+      /* 设置背景图片 */
+      /* background-image: url('IMAGE/Blue-1-Logo.png'); */
+      /* 如果需要调整背景图片的显示方式，可以使用以下属性 */
+      background-size: 0%;
+      /* 或者 contain，根据需要调整 */
+      background-position: center center;
+      /* 居中显示 */
+      background-repeat: no-repeat;
+      /* 不重复显示 */
+    }
+
+    .logo-container img {
+      width: 100%;
+      /* 图像宽度占满容器 */
+      height: 100%;
+      /* 图像高度占满容器 */
+      object-fit: contain;
+      /* 图像适应容器尺寸 */
+    }
+
+    .container {
+      width: 450px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* 文本工具区 */
+
+    /* .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+    } */
+
+    .form-control {
+      margin-bottom: 10px;
+    }
+
+    .form-control label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-control input,
+    .form-control textarea {
+      width: 100%;
+      padding: 5px;
+    }
+
+
+    .editor-toolbar {
+      margin-bottom: 10px;
+    }
+
+    .editor-toolbar button {
+      margin-right: 5px;
+    }
+
+    .icon-button {
+      background-color: transparent;
+      /* 设置背景透明 */
+      border: none;
+      /* 移除边框 */
+      cursor: pointer;
+      /* 改变鼠标指针形状表示可点击 */
+      font-size: 1.5em;
+      /* 调整图标的大小 */
+    }
+
+    .La-center {
+      position: relative;
+      /* width: 10rem;
+      /* 设置合适的宽度 */
+      /* height: 10rem;
+      设置合适的高度 */
+    }
+
+    .Language-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      /* 将下拉框放置在.La-center下方 */
+      height: 91.5px;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid rgb(140, 140, 143);
+      width: 90px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      /* 调整下拉框宽度 */
+      text-align: center;
+      color: black;
+      /* 调整文字颜色 */
+      z-index: 10;
+      /* 确保位于底层内容上方 */
+    }
+
+    .Language-content a {
+      display: block;
+      padding: 0.5rem 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .Language-content a:hover {
+      background-color: #000099;
+      color: #fffafa;
+      /* 添加鼠标悬停效果 */
+      border-bottom-left-radius: 0.5px;
+      border-bottom-right-radius: 0.5px;
+    }
+
+    .logo-container {
+      width: 120px;
+      /* 容器的宽度 */
+      height: 56px;
+      /* 容器的高度 */
+      /* 设置背景图片 */
+      /* background-image: url('IMAGE/Blue-1-Logo.png'); */
+      /* 如果需要调整背景图片的显示方式，可以使用以下属性 */
+      background-size: 0%;
+      /* 或者 contain，根据需要调整 */
+      background-position: center center;
+      /* 居中显示 */
+      background-repeat: no-repeat;
+      /* 不重复显示 */
+    }
+
+    .logo-container img {
+      width: 100%;
+      /* 图像宽度占满容器 */
+      height: 100%;
+      /* 图像高度占满容器 */
+      object-fit: contain;
+      /* 图像适应容器尺寸 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden"
+    style='background-color: #F2F2F2;'>
+    <div class="layout-container flex h-full grow flex-col">
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3"
+        style="background-color:	#000099;">
+        <div class=" flex  text-[#111517]">
+          <div class="size-4" style="position: absolute; top: 0.5px; left: 25px;">
+            <div class="logo-container">
+              <img src="IMAGE/White-1-Logo(已处理).png" alt="Blue Logo" class="logo-img">
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="La-center flex items-center gap-8" onclick="toLanguage()" id="La-center">
+            <svg t="1720166041452" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="3722" width="24" height="24">
+              <path
+                d="M512 0c282.773333 0 512 229.226667 512 512S794.773333 1024 512 1024 0 794.773333 0 512 229.226667 0 512 0z m169.749333 554.666667H342.250667c9.429333 217.792 89.813333 384 169.749333 384 79.914667 0 160.32-166.208 169.749333-384z m-424.917333 0l-169.386667 0.021333c15.658667 157.568 117.034667 289.92 256.853334 349.76-50.282667-85.738667-82.069333-210.346667-87.466667-349.76z m679.722667 0.021333h-169.386667c-5.397333 139.434667-37.184 264.021333-87.466667 349.738667 139.818667-59.797333 241.194667-192.170667 256.853334-349.738667zM344.32 119.573333l-4.736 2.048C202.176 182.378667 102.912 313.536 87.466667 469.333333h169.386666c5.397333-139.434667 37.184-264.042667 87.466667-349.76zM512 85.333333l-3.2 0.085334c-78.848 4.352-157.226667 169.045333-166.549333 383.914666h339.498666C672.32 251.562667 591.936 85.333333 512 85.333333z m167.701333 34.218667l3.136 5.44C731.306667 210.496 761.877333 332.8 767.146667 469.333333h169.386666c-15.637333-157.589333-117.034667-289.941333-256.853333-349.781333z"
+                fill="#ffffff" p-id="3723">Language</path>
+            </svg>
+            <!-- <a class="text-[#ffffff] text-sm font-medium leading-normal" href="#">繁</a>
+            <a class="text-[#ffffff] text-sm font-medium leading-normal" href="#">简</a>
+            <a class="text-sm font-medium leading-normal" href="#" style="font-weight: bold; color: #ffffff;">EN</a> -->
+
+            <!-- 悬停时显示的内容 -->
+            <div class="Language-content rounded-l" id="Language-content">
+
+              <button style="width: 90px; "><a href="#">繁</a></button><br>
+              <button style="width: 90px; "><a href="#">简</a></button><br>
+              <button style="width: 90px;font-weight: bold;color: #171C8E"><a href="#">EN</a></button>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <!-- 全局搜索 -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f2f4] text-[#111517] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#111517]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                  </path>
+                </svg>
+              </div>
+            </button>
+            <!-- 站内信 -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f2f4] text-[#111517] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 relative">
+              <a href="dashboard-Notice.html">
+                <div class="text-[#111517]" data-icon="Bell" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                    viewBox="0 0 256 256">
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+                    </path>
+                  </svg>
+                </div>
+              </a>
+              <div class="absolute h-2 w-2 bg-red-500 rounded-full top-1 right-1"></div>
+            </button>
+            <!-- Help -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f2f4] text-[#111517] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#111517]" data-icon="Question" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z">
+                  </path>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <!-- <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+            style='background-image: url("IMAGE/icon.jpg");'>
+          </div> -->
+          <!-- 头像 -->
+          <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" id="bg-center"
+            style='background-image: url("IMAGE/Admin.jpg");' onclick="toggleDropdown()">
+
+            <!-- 悬停时显示的内容 -->
+            <div class="dropdown-content" id="dropdown-content">
+              <div style="background-color: #000099; height: 60px; padding: 8px 26px 0;">
+                <div class="bg-center text-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  id="bg-center" style='background-image: url("IMAGE/Admin.jpg"); '>
+                </div>
+              </div>
+              <button style="margin-top: 7pt; width: 90px; "><a href="Login.html">Login Out</a></button>
+
+              <!-- 可以根据需要添加更多内容 -->
+            </div>
+
+          </div>
+        </div>
+      </header>
+      <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+        <!-- 左侧菜单栏 -->
+        <div class="layout-content-container flex flex-col w-80 sticky top-0">
+          <div class="flex h-full flex-col justify-between bg-slate-50 p-4"
+            style=' background-color:#fffafa; border-top-left-radius: 15px; border-bottom-left-radius: 15px;'>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-14 mr-4"
+                  style='background-image: url("IMAGE/Admin.jpg");'>
+                </div>
+                <div class="pl-2">
+                  <h1 class="text-[#0e141b] text-base font-medium leading-normal"><b>Administrator</b></h1>
+                  <p class="text-[#4e7397] text-sm font-normal leading-normal"><b>Administrator</b></p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2"></div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3 px-3 py-2 ">
+                  <div class="text-[#0e141b]" data-icon="House" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a
+                      href="dashboard-Adminhome.html">Dashboard</a>
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2 ">
+                  <div class="text-[#111418]" data-icon="UserPlus" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M256,136a8,8,0,0,1-8,8H232v16a8,8,0,0,1-16,0V144H200a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,256,136Zm-57.87,58.85a8,8,0,0,1-12.26,10.3C165.75,181.19,138.09,168,108,168s-57.75,13.19-77.87,37.15a8,8,0,0,1-12.25-10.3c14.94-17.78,33.52-30.41,54.17-37.17a68,68,0,1,1,71.9,0C164.6,164.44,183.18,177.07,198.13,194.85ZM108,152a52,52,0,1,0-52-52A52.06,52.06,0,0,0,108,152Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#111418] text-sm font-medium leading-normal">
+                    <a href="dashboard-EmailTemplate.html">Common</a>
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2 rounded-xl bg-[#e7edf3]">
+                  <div class="text-[#111418]" data-icon="Gear" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a
+                      href="dashboard-EmailTemplate.html">Mail Template</a></p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="ArchiveTray" data-size="24px" data-weight="regular">
+                    <svg t="1719906606510" width="24px" height="24px" fill="currentColor" class="icon"
+                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1236" width="32"
+                      height="32">
+                      <path
+                        d="M894.634667 235.292444l-320.284445-163.384888a137.102222 137.102222 0 0 0-124.700444 0l-320.284445 165.091555C85.560889 256.967111 56.888889 303.672889 56.888889 353.678222v371.825778c0 50.062222 28.672 95.061333 72.476444 118.385778l321.991111 165.091555a137.386667 137.386667 0 0 0 124.757334 0l318.520889-163.384889A131.640889 131.640889 0 0 0 967.111111 727.210667V353.678222c0-50.062222-28.672-96.711111-72.476444-118.328889zM481.621333 130.275556c10.126222-5.006222 20.252444-8.362667 30.378667-8.362667 10.126222 0 21.902222 1.706667 30.321778 6.656l320.284444 163.441778c5.063111 1.706667 8.419556 5.006222 13.482667 8.305777L512 487.082667 147.911111 303.672889a36.750222 36.750222 0 0 1 13.482667-8.362667l320.284444-165.034666zM161.450667 783.928889a66.332444 66.332444 0 0 1-37.091556-60.074667V365.340444l134.826667 68.380445v150.072889c0 13.368889 6.826667 25.031111 18.545778 30.037333l23.608888 11.662222c1.706667 1.706667 5.12 1.706667 6.769778 1.706667 10.126222 0 16.839111-6.712889 16.839111-16.725333v-143.36l151.722667 76.686222v401.806222L161.393778 783.928889z m701.212444 0l-316.871111 163.384889V543.800889l353.962667-178.460445v358.513778c0 25.031111-13.482667 48.355556-37.091556 60.017778z"
+                        fill="#333333" p-id="1237"></path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal">COMM Servies</p>
+                </div>
+
+                <!-- <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="UsersThree" data-size="24px" data-weight="fill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 256 256">
+                      <path fill="none" stroke="currentColor" stroke-width="16"
+                        d="M64.12,147.8a4,4,0,0,1-4,4.2H16a8,8,0,0,1-7.8-6.17,8.35,8.35,0,0,1,1.62-6.93A67.79,67.79,0,0,1,37,117.51a40,40,0,1,1,66.46-35.8,3.94,3.94,0,0,1-2.27,4.18A64.08,64.08,0,0,0,64,144C64,145.28,64,146.54,64.12,147.8Zm182-8.91A67.76,67.76,0,0,0,219,117.51a40,40,0,1,0-66.46-35.8,3.94,3.94,0,0,0,2.27,4.18A64.08,64.08,0,0,1,192,144c0,1.28,0,2.54-.12,3.8a4,4,0,0,0,4,4.2H240a8,8,0,0,0,7.8-6.17A8.33,8.33,0,0,0,246.17,138.89Zm-89,43.18a48,48,0,1,0-58.37,0A72.13,72.13,0,0,0,65.07,212,8,8,0,0,0,72,224H184a8,8,0,0,0,6.93-12A72.15,72.15,0,0,0,157.19,182.07Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a href="dashboard-application.html">PIE
+                      Auditor</a></p>
+                </div> -->
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#111418]" data-icon="Gear" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z">
+                      </path>
+                    </svg>
+
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a
+                      href="dashboard-SecUser.html">Security</a></p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="ArchiveTray" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,16V152h-28.7A15.86,15.86,0,0,0,168,156.69L148.69,176H107.31L88,156.69A15.86,15.86,0,0,0,76.69,152H48V48Zm0,160H48V168H76.69L96,187.31A15.86,15.86,0,0,0,107.31,192h41.38A15.86,15.86,0,0,0,160,187.31L179.31,168H208v40ZM90.34,125.66a8,8,0,0,1,11.32-11.32L120,132.69V72a8,8,0,0,1,16,0v60.69l18.34-18.35a8,8,0,0,1,11.32,11.32l-32,32a8,8,0,0,1-11.32,0Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal">Reports</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右侧内容区-->
+        <div
+          class="layout-content-container flex flex-col max-w-[960px] flex-1 border border-gray-360 p-30 overflow-y-auto"
+          style="position: sticky; top: 0; height: calc(100vh - 68px);background-color: #fffafa;">
+          <div class="flex flex-wrap justify-between gap-3 p-4 justify-between border-b border-[#E9DFCE]">
+            <p class="text-[#111418] tracking-light text-[22px] font-bold leading-tight min-w-72">Mail Template </p>
+          </div>
+          <div style="margin: 15px 0px 20px 0px;">
+            <button class="justify-center rounded-xl h-10 bg-[#171C8E] text-white text-sm"
+              style="width: 50px; margin:0px 5px 25px 760px;">
+              <a href="#" class="block h-full flex items-center justify-center truncate">
+                Save
+              </a>
+            </button>
+            <button class="justify-center rounded-xl h-10 bg-[#808080] text-white text-sm" style="width: 50px; >
+              <a href=" dashboard-AddUser.html" class="block h-full flex items-center justify-center truncate">
+              Cancell
+              </a>
+            </button>
+            <table class="flex-1 border-collapse" style="width:750px">
+
+              <tbody>
+                <tr>
+                  <td class="px-4 py-2 text-right">ldentifier:</td>
+                  <td class="px-4 py-2 text-[#171C8E]"><input class="rounded-l" placeholder="member:tailormade"></td>
+                  <td class="px-4 py-2 text-right">Module:</td>
+                  <td class="px-4 py-2"><input class="rounded-l" placeholder="Member"></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 text-right">Sender Name:</td>
+                  <td class="px-4 py-2 text-[#171C8E]"><input class="rounded-l" placeholder="UAT -AFRC Registration">
+                  </td>
+                  <td class="px-4 py-2 text-right">Sender Email:</td>
+                  <td class="px-4 py-2"><input class="rounded-l" placeholder="uatregistration@afrc.org.hk"></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 text-right">CC:</td>
+                  <td class="px-4 py-2 text-[#171C8E]"><input class="rounded-l" placeholder=""></td>
+                  <td class="px-4 py-2 text-right">BCC:</td>
+                  <td class="px-4 py-2"><input class="rounded-l" placeholder="uatregistration@afrc.org.hk"></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 text-right">Recipients:</td>
+                  <td class="px-4 py-2 text-[#171C8E]"><input class="rounded-l" placeholder=""></td>
+                  <td class="px-4 py-2"></td>
+                  <td class="px-4 py-2"></td>
+                </tr>
+
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+          <div class="container">
+
+            <div class="form-control">
+
+              <div class="editor-toolbar" style="margin-top: 20px;">
+                <!-- 粗体 -->
+                <button><svg t="1720072119413" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="6982" width="16" height="16">
+                    <path
+                      d="M878.2 404.8c34-33.6 51.4-72.2 51.4-115.4 0-41-13.6-79.6-40.4-116.2-26.6-36.4-63.4-63.6-110.2-82C732.2 73 653.2 63.8 542 63.8H75v24.8c44 0 74.4 3.8 90.6 11.4 16.4 7.6 27.8 17.6 34.6 30 6.4 12.2 9.8 42.8 9.8 91.6v581.2c0 48.8-3.4 79.2-9.8 91.6-6.6 12.2-17.8 22.2-33.8 30-16.2 7.6-46.6 11.4-91.2 11.4v24.8H570c138 0 243.4-26.6 316-79.6 59-44.4 88.4-100.2 88.4-167.6 0-64-26.6-116.2-80.2-156.2-37.6-28.4-102.6-52.6-195.6-72.2 85.4-19.8 145.2-46.6 179.6-80.2zM436.6 114.6c70.2-0.6 121.2 5.8 152.6 19 31.6 13 56 32.4 72.8 57.8 17 25.6 25.6 58 25.6 97.2 0 40.2-8.8 72.8-26 98.2-17.2 25.6-42 45.4-74 59.2-32.2 14-82.6 21-151 21V114.6z m165.8 423.2c36.6 13.6 65.4 36.8 86.4 69.8 21.2 33 31.8 70.8 31.8 112.8 0 36.8-8.8 69.8-26 99.4-17.2 29.6-42 52.2-74 67.8C588.4 903.2 553 911 514.4 911c-25.8 0-45.2-6-58.2-18.2-13.2-12-19.6-30-19.6-53.4V518.6c73.8-0.6 129 5.8 165.8 19.2z"
+                      fill="#333333" p-id="6983"></path>
+                  </svg></button>
+                <button><svg t="1720072161451" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="8013" width="16" height="16">
+                    <path
+                      d="M329.649231 72.625231h510.739692L820.066462 177.230769H626.845538l-137.216 709.553231H682.929231l-20.322462 104.605538H151.788308l20.322461-104.605538H364.701538L502.547692 177.230769H309.326769z"
+                      fill="#333333" p-id="8014"></path>
+                  </svg></button>
+                <button><svg t="1720072355959" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="9159" width="16" height="16">
+                    <path
+                      d="M703.232 67.008h127.488v413.248c0 158.016-142.656 286.016-318.72 286.016-176 0-318.72-128-318.72-286.016V67.008h127.488v413.248c0 39.872 18.176 78.144 51.136 107.776 36.8 32.96 86.528 51.072 140.096 51.072s103.36-18.112 140.032-51.136c33.024-29.632 51.2-67.968 51.2-107.776V67.008zM193.28 871.616h637.44v85.376H193.28v-85.376z"
+                      fill="#040000" p-id="9160"></path>
+                  </svg></button>
+                <button><svg t="1720072378722" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="10196" width="16" height="16">
+                    <path
+                      d="M960.007451 0H64.00158C28.652059 0 0 28.653866 0 64.003387s28.652059 64.00158 64.00158 64.00158h896.005871c35.338684 0 63.992549-28.652059 63.992549-64.00158C1024 28.653866 995.346134 0 960.007451 0zM704.001129 896.007676H64.00158C28.652059 896.007676 0 924.659736 0 960.009257c0 35.338684 28.652059 63.990743 64.00158 63.990743h639.999549c35.347715 0 64.00158-28.652059 64.00158-63.990743 0-35.349521-28.653866-64.00158-64.00158-64.001581zM704.001129 296.962348H64.00158C28.652059 296.962348 0 325.614407 0 360.963929c0 35.349521 28.652059 64.00158 64.00158 64.00158h639.999549c35.347715 0 64.00158-28.652059 64.00158-64.00158 0-35.349521-28.653866-64.00158-64.00158-64.001581zM960.007451 599.045328H64.00158C28.652059 599.045328 0 627.699194 0 663.046909c0 35.338684 28.652059 63.990743 64.00158 63.990743h896.005871c35.338684 0 63.992549-28.652059 63.992549-63.990743 0-35.347715-28.653866-64.00158-63.992549-64.001581z"
+                      fill="#231815" p-id="10197"></path>
+                  </svg></button>
+                <button><svg t="1720072397821" class="icon" viewBox="0 0 1097 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="11246" width="16" height="16">
+                    <path
+                      d="M36.059429 147.382857v-109.714286H1060.571429v109.714286H36.059429z m219.794285 282.916572v-109.714286h582.144v109.714286H255.853714zM38.985143 718.262857v-109.714286h1022.464v109.714286H38.985143z m220.306286 278.674286v-109.714286h579.657142v109.714286H259.291429z"
+                      fill="#333333" p-id="11247"></path>
+                  </svg></button>
+                <button><svg t="1720072415994" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="12293" width="16" height="16">
+                    <path
+                      d="M960.007451 0H64.00158C28.652059 0 0 28.653866 0 64.003387s28.652059 64.00158 64.00158 64.00158h896.005871c35.338684 0 63.992549-28.652059 63.992549-64.00158C1024 28.653866 995.346134 0 960.007451 0zM960.007451 896.007676H319.998871c-35.338684 0-63.990743 28.652059-63.990743 64.001581 0 35.338684 28.652059 63.990743 63.990743 63.990743h640.00858c35.338684 0 63.992549-28.652059 63.992549-63.990743 0-35.349521-28.653866-64.00158-63.992549-64.001581zM960.007451 296.962348H319.998871c-35.338684 0-63.990743 28.653866-63.990743 64.001581 0 35.349521 28.652059 64.00158 63.990743 64.00158h640.00858c35.338684 0 63.992549-28.652059 63.992549-64.00158 0-35.349521-28.653866-64.00158-63.992549-64.001581zM960.007451 599.045328H64.00158C28.652059 599.045328 0 627.699194 0 663.046909c0 35.338684 28.652059 63.990743 64.00158 63.990743h896.005871c35.338684 0 63.992549-28.652059 63.992549-63.990743 0-35.347715-28.653866-64.00158-63.992549-64.001581z"
+                      fill="#231815" p-id="12294"></path>
+                  </svg></button>
+                <button><svg t="1720072450995" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="13321" width="16" height="16">
+                    <path
+                      d="M294.4 93.9c17.1-17.1 17.1-42.7 0-59.7-17.1-17.1-42.7-17.1-59.7 0L119.5 140.8l-47-51.2c-17.1-17.1-42.7-17.1-59.7 0s-17.1 42.7 0 59.7l76.8 81.1c17.1 17.1 42.7 17.1 59.7 0L294.4 93.9z m89.6-8.6c-25.6 0-42.7 17.1-42.7 42.7s17.1 42.7 42.7 42.7h597.3c25.6 0 42.7-17.1 42.7-42.7s-17.1-42.7-42.7-42.7H384z m0 384c-25.6 0-42.7 17.1-42.7 42.7s17.1 42.7 42.7 42.7h597.3c25.6 0 42.7-17.1 42.7-42.7s-17.1-42.7-42.7-42.7H384zM341.3 896c0-25.6 17.1-42.7 42.7-42.7h597.3c25.6 0 42.7 17.1 42.7 42.7s-17.1 42.7-42.7 42.7H384c-25.6 0-42.7-17.1-42.7-42.7z m-209-507.7c-72.5 0-128 55.5-128 128s55.5 128 128 128 128-55.5 128-128-55.5-128-128-128z m0 170.7c-25.6 0-42.7-17.1-42.7-42.7s17.1-42.7 42.7-42.7 42.7 17.1 42.7 42.7-17.1 42.7-42.7 42.7z m0 209c-72.5 0-128 55.5-128 128s55.5 128 128 128 128-55.5 128-128-55.5-128-128-128z m0 170.7c-25.6 0-42.7-17.1-42.7-42.7s17.1-42.7 42.7-42.7S175 870.4 175 896s-17.1 42.7-42.7 42.7z"
+                      fill="#303133" p-id="13322"></path>
+                  </svg></button>
+                <button><svg t="1720072479617" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="14381" width="16" height="16">
+                    <path
+                      d="M100.48 58.24l-64 12.16V24.96L114.56 8.96h40.96v260.48h-55.04zM46.72 562.56c23.04-17.92 42.24-33.92 57.6-47.36s27.52-25.6 37.12-35.2a120.32 120.32 0 0 0 19.2-27.52 51.2 51.2 0 0 0 5.76-23.04 33.92 33.92 0 0 0-11.52-29.44 64 64 0 0 0-33.92-7.68 135.68 135.68 0 0 0-26.88 0 216.32 216.32 0 0 0-30.08 9.6v-45.44a244.48 244.48 0 0 1 32.64-7.04 330.88 330.88 0 0 1 36.48 0 108.8 108.8 0 0 1 64 17.92 64 64 0 0 1 23.68 55.68 106.24 106.24 0 0 1 0 29.44 104.96 104.96 0 0 1-13.44 28.8 232.96 232.96 0 0 1-29.44 30.72 472.32 472.32 0 0 1-46.08 39.68l-16.64 13.44h113.92v45.44H46.72zM112 1004.8a309.76 309.76 0 0 1-58.88-5.12v-46.72a238.72 238.72 0 0 0 28.16 5.12 192 192 0 0 0 28.16 0 120.32 120.32 0 0 0 21.76 0 39.68 39.68 0 0 0 17.92-5.76 33.28 33.28 0 0 0 12.16-10.88 37.76 37.76 0 0 0 4.48-18.56 28.16 28.16 0 0 0-17.28-26.88 128 128 0 0 0-46.72-7.04h-19.84v-41.6h19.2a99.84 99.84 0 0 0 43.52-7.68 26.88 26.88 0 0 0 16.64-26.88 24.96 24.96 0 0 0-12.8-24.32 77.44 77.44 0 0 0-34.56-6.4h-26.24a142.72 142.72 0 0 0-24.96 5.76v-44.16a149.12 149.12 0 0 1 25.6-5.12 179.84 179.84 0 0 1 32 0 248.96 248.96 0 0 1 39.68 3.2 85.12 85.12 0 0 1 30.08 12.16 52.48 52.48 0 0 1 18.56 22.4 74.88 74.88 0 0 1 7.04 33.28 64 64 0 0 1-10.24 35.2 64 64 0 0 1-31.36 21.12 56.96 56.96 0 0 1 35.84 21.12 67.2 67.2 0 0 1 12.16 40.96 64 64 0 0 1-27.52 58.24 151.68 151.68 0 0 1-82.56 18.56zM320 96h672.64v87.68H320zM320 423.04h672.64v87.68H320zM320 808.32h672.64V896H320z"
+                      fill="#231815" p-id="14382"></path>
+                  </svg></button>
+                <button><svg t="1720072512946" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="15580" width="16" height="16">
+                    <path
+                      d="M116.7872 116.7872c72.192-72.192 186.88-76.1856 260.9664-10.1376l7.7824 7.3728 194.9696 194.9696a42.6496 42.6496 0 0 1-55.9616 64.1536l-4.352-3.7888-194.9696-195.0208c-39.936-39.936-106.24-39.0144-148.0704 2.816-39.7312 39.7312-42.496 101.5296-8.4992 141.824l5.6832 6.1952 169.3184 169.3184a42.6496 42.6496 0 0 1-56.0128 64.1536l-4.352-3.84L114.0224 385.536C40.3968 311.9104 41.984 191.5904 116.736 116.7872zM662.3232 450.4576a42.7008 42.7008 0 0 1 55.9616-3.84l4.352 3.84 169.3184 169.2672c73.6256 73.6256 71.9872 193.9456-2.816 268.7488-72.192 72.192-186.88 76.1856-260.9152 10.1376l-7.7824-7.3728L425.4208 696.32a42.6496 42.6496 0 0 1 55.9616-64.1536l4.4032 3.7888 194.9696 195.0208c39.936 39.936 106.24 39.0144 148.0704-2.816 39.7312-39.7312 42.496-101.5296 8.448-141.824l-5.632-6.1952-169.3184-169.3184a42.6496 42.6496 0 0 1 0-60.3136z"
+                      fill="#333333" p-id="15581"></path>
+                    <path
+                      d="M520.192 308.992a42.6496 42.6496 0 0 1 60.3136 0c73.6256 73.6256 72.0384 193.9456-2.7648 268.7488a42.6496 42.6496 0 1 1-60.3648-60.3648c41.8304-41.8304 42.752-108.1344 2.816-148.0192a42.6496 42.6496 0 0 1 0-60.3648zM425.472 424.7552a42.6496 42.6496 0 0 1 60.3136 60.3136c-41.8304 41.8304-42.752 108.1344-2.816 148.0704a42.6496 42.6496 0 0 1-60.3136 60.3136c-73.6256-73.6256-72.0384-193.8944 2.7648-268.6976z"
+                      fill="#333333" p-id="15582"></path>
+                  </svg></button>
+                <button><svg t="1720072534354" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="16639" width="16" height="16">
+                    <path
+                      d="M832 738.304H192l159.616-215.936 107.968 137.696h29.728l184.64-384.928L832 738.304zM128 144h768a64 64 0 0 1 64 64v608a64 64 0 0 1-64 64H128a64 64 0 0 1-64-64V208a64 64 0 0 1 64-64z m0 48a16 16 0 0 0-16 16v608a16 16 0 0 0 16 16h768a16 16 0 0 0 16-16V208a16 16 0 0 0-16-16H128z m145.376 147.28c0-37.552 29.728-67.28 65.712-67.28 36 0 65.728 29.728 65.728 67.28 0 23.472-12.528 45.392-32.864 57.904a62.208 62.208 0 0 1-65.728 0c-20.336-10.96-32.848-34.432-32.848-57.904z"
+                      fill="#000000" p-id="16640"></path>
+                  </svg></button>
+                <button><svg t="1720072569750" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="17658" width="16" height="16">
+                    <path
+                      d="M768.004551 853.333333v170.666667h-103.651555c-16.782222 0-10.126222-39.253333-10.126223-56.888889v-113.777778H483.560107v-113.777777h170.666666v-170.666667h113.777778v170.666667h170.666667v113.777777h-170.666667z m0-739.555555H483.560107v227.555555c0 17.692444-40.049778 56.888889-56.888889 56.888889H199.115662v512h227.555556v113.777778H115.830329A31.288889 31.288889 0 0 1 85.337884 991.971556V320L390.091662 0h457.159111c16.782222 0 34.531556 39.196444 34.531556 56.888889v398.222222h-113.777778V113.777778z"
+                      fill="" p-id="17659"></path>
+                  </svg></button>
+                <button><svg t="1720072616873" class="icon" viewBox="0 0 1066 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="18751" width="16" height="16">
+                    <path
+                      d="M122.410667 150.485333a36.266667 36.266667 0 0 1 32.554666-20.309333h401.621334a36.266667 36.266667 0 1 1 0 72.533333H229.034667l242.688 312.746667-242.090667 308.053333h326.954667a36.266667 36.266667 0 1 1 0 72.533334H154.965333a36.266667 36.266667 0 0 1-28.501333-58.666667L379.733333 515.2 126.293333 188.672a36.266667 36.266667 0 0 1-3.925333-38.186667zM611.2 541.013333a36.266667 36.266667 0 0 1 51.285333 0l114.986667 114.986667 114.944-114.986667a36.266667 36.266667 0 0 1 51.285333 51.285334l-114.944 114.986666 111.573334 111.573334a36.266667 36.266667 0 1 1-51.285334 51.285333l-111.573333-111.573333-111.616 111.616a36.266667 36.266667 0 0 1-51.285333-51.328l111.616-111.573334-114.986667-114.986666a36.266667 36.266667 0 0 1 0-51.285334z"
+                      fill="#1D2129" p-id="18752"></path>
+                  </svg></button>
+                <button> <svg t="1720072687455" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="19848" width="16" height="16">
+                    <path
+                      d="M724.8 238.272c72.064 6.72 129.92 47.104 142.208 116.416h-41.664L892.608 448 960 354.688h-46.464C901.184 261.376 825.344 200.704 729.6 192a23.808 23.808 0 0 0-25.536 23.04c0.896 11.584 9.408 22.144 20.8 23.168zM928 929.856H461.888V575.808H928v354.048z m-41.536-312.768H504.512v269.888h381.952V617.088z"
+                      fill="#2c2c2c" p-id="19849"></path>
+                    <path d="M391.296 512h41.6v254.656h-41.6z" fill="#2c2c2c" p-id="19850"></path>
+                    <path d="M754.752 512v41.6H392.256V512z" fill="#2c2c2c" p-id="19851"></path>
+                    <path
+                      d="M195.264 146.112c-28.672 0-51.968 4.928-68.992 15.68-19.712 11.648-32.256 30.464-37.184 55.552l47.04 4.032a41.088 41.088 0 0 1 20.16-28.672c8.96-5.376 21.056-8.064 35.84-8.064 34.944 0 52.416 16.128 52.416 48.384v9.408l-51.968 1.344c-34.048 0.896-60.928 7.616-79.744 21.056-20.608 13.888-30.912 34.048-30.912 60.032 0 19.264 7.168 34.944 21.952 47.04 13.44 12.096 32.256 18.368 56.448 18.368 20.608 0 38.528-4.032 53.76-11.2 13.44-6.72 24.64-16.128 33.6-27.776V384h43.904V236.16c0-28.224-7.168-49.728-21.056-64.512-16.128-17.024-41.216-25.536-75.264-25.536z m49.28 130.816v13.44c0 17.92-7.616 33.152-21.952 45.248-14.336 12.096-31.36 18.368-51.52 18.368a45.184 45.184 0 0 1-29.12-8.96 26.24 26.24 0 0 1-11.2-21.952c0-28.672 21.504-43.904 64.96-44.8l48.832-1.344zM345.792 57.856V384h44.352v-27.776c16.128 22.4 39.872 34.048 71.68 34.048 34.048 0 60.48-12.096 80.192-36.288 17.92-22.4 26.88-51.52 26.88-86.912 0-34.048-8.96-62.272-26.432-84.672-19.264-24.192-45.248-36.288-78.4-36.288-28.672 0-51.968 13.44-70.784 40.768V57.856h-47.488z m107.52 126.784c23.296 0 40.768 7.616 51.968 23.744 9.856 13.44 14.784 33.152 14.784 58.688s-4.928 45.248-13.888 59.584c-11.2 16.576-28.224 25.088-51.52 25.088a55.424 55.424 0 0 1-47.936-24.64c-9.856-14.784-14.784-33.6-14.784-56.896v-4.032c0-25.088 5.824-45.248 18.368-60.48a50.688 50.688 0 0 1 43.008-21.056zM605.76 662.08c-20.48 0-37.12 3.52-49.28 11.2-14.08 8.32-23.04 21.76-26.56 39.68l33.6 2.88a29.376 29.376 0 0 1 14.4-20.48c6.4-3.84 15.04-5.76 25.6-5.76 24.96 0 37.44 11.52 37.44 34.56v6.72l-37.12 0.96c-24.32 0.64-43.52 5.44-56.96 15.04a48.64 48.64 0 0 0-22.08 42.88c0 13.76 5.12 24.96 15.68 33.6 9.6 8.64 23.04 13.12 40.32 13.12 14.72 0 27.52-2.88 38.4-8 9.6-4.8 17.6-11.52 24-19.84V832h31.36v-105.6c0-20.16-5.12-35.52-15.04-46.08-11.52-12.16-29.44-18.24-53.76-18.24z m35.2 93.44v9.6c0 12.8-5.44 23.68-15.68 32.32a55.104 55.104 0 0 1-36.8 13.12 32.256 32.256 0 0 1-20.8-6.4 18.688 18.688 0 0 1-8-15.68c0-20.48 15.36-31.36 46.4-32l34.88-0.96z m145.92-93.44c21.12 0 38.08 4.8 50.88 14.4 12.8 10.24 21.12 25.6 24.32 46.08h-33.6c-2.24-11.2-6.72-19.52-13.76-24.64a44.224 44.224 0 0 0-27.84-8c-14.08 0-24.96 5.12-32.96 15.68-8.32 10.24-12.16 24.96-12.16 43.52 0 18.56 3.84 33.28 11.84 43.84 7.36 10.24 18.24 15.68 32.96 15.68 25.28 0 39.36-12.8 42.56-37.76h33.6c-3.84 22.08-12.48 38.72-25.28 49.6-12.8 10.56-30.08 16-51.2 16-25.28 0-44.8-8.32-58.88-24.96-13.76-16-20.48-36.48-20.48-62.08 0-24.96 6.72-45.44 20.16-61.44 14.4-17.28 34.24-25.92 59.84-25.92z"
+                      fill="#2c2c2c" p-id="19852"></path>
+                  </svg></button>
+                <button><svg t="1720072733144" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="21388" width="16" height="16">
+                    <path
+                      d="M26.151454 783.058824m60.235294 0l843.294118 0q60.235294 0 60.235294 60.235294l0 120.470588q0 60.235294-60.235294 60.235294l-843.294118 0q-60.235294 0-60.235294-60.235294l0-120.470588q0-60.235294 60.235294-60.235294Z"
+                      fill="#05AFC8" p-id="21389"></path>
+                    <path d="M206.857336 722.823529H146.622042L477.91616 0h60.235294L206.857336 722.823529z"
+                      fill="#4D4D4D" p-id="21390"></path>
+                    <path d="M538.151454 0h-60.235294L809.210278 722.823529h60.235294L538.151454 0z" fill="#4D4D4D"
+                      p-id="21391"></path>
+                    <path d="M267.092631 481.882353h481.882353v60.235294H267.092631z" fill="#4D4D4D" p-id="21392">
+                    </path>
+                  </svg></button>
+                <button><svg t="1720072796081" class="icon" viewBox="0 0 1142 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="22521" width="16" height="16">
+                    <path
+                      d="M1102.769231 39.384615v945.23077H39.384615V39.384615h1063.384616m0-39.384615H39.384615a39.384615 39.384615 0 0 0-39.384615 39.384615v945.23077a39.384615 39.384615 0 0 0 39.384615 39.384615h1063.384616a39.384615 39.384615 0 0 0 39.384615-39.384615V39.384615a39.384615 39.384615 0 0 0-39.384615-39.384615z"
+                      fill="#4D4D4D" p-id="22522"></path>
+                    <path
+                      d="M39.384615 393.846154h1063.384616v39.384615H39.384615zM39.384615 590.769231h1063.384616v39.384615H39.384615zM39.384615 787.692308h1063.384616v39.384615H39.384615zM39.384615 196.923077h1063.384616v39.384615H39.384615z"
+                      fill="#B3B3B3" p-id="22523"></path>
+                    <path
+                      d="M315.076923 196.923077v787.692308H275.692308V196.923077zM590.769231 196.923077v787.692308h-39.384616V196.923077zM866.461538 196.923077v787.692308h-39.384615V196.923077z"
+                      fill="#B3B3B3" p-id="22524"></path>
+                    <path d="M39.384615 39.384615h1063.384616v157.538462H39.384615z" fill="#05AFC8" p-id="22525"></path>
+                  </svg></button>
+                <button> </button>
+              </div>
+              <div class="flex flex-col h-940 gap-2 bg-[#ffffff] border border-[#808080] rounded-l p-4">
+
+                <h2 class="mb-4" style="margin:35px 0px 2px 15px"><b>Hi, User</b></h2>
+                <div class="mb-4 whitespace-pre-line " style="margin:3px 0px 2px 15px">
+                  <a href="#">
+                    You have an event with an Renewal that has not been completed yet. Please complete it
+                    as soon as possible
+
+                    Thanks
+                  </a>
+                </div>
+                <div style="margin:3px 0px 2px 15px">Best wishes,</div>
+                <div style="margin:3px 0px 2px 10px"><img width="100" height="90" alt="image"
+                    src="IMAGE/Blue-1-Logo.png" /></div>
+                <div style="margin:3px 0px 2px 15px">
+                  Company:xxxx 會計師事務所有限公司
+                </div>
+                <div style="margin:3px 0px 2px 15px">
+                  Email:ARMIES@afrc.org.hk
+                </div>
+                <div class="flex items-center text-[#171C8E]" style="margin:15px 0px 2px 15px"><a href="#"
+                    style="text-decoration: underline; ">Click to
+                    enter ARMIES</a></div>
+              </div>
+            </div>
+
+            <!-- <div class="form-control">
+              <label for="format">邮件格式:</label>
+              <select id="format">
+                <option value="text">纯文本</option>
+                <option value="html">HTML格式</option>
+              </select>
+            </div> -->
+          </div>
+
+          <div class="flex max-w-[960px] flex-1 flex-col" style="margin-top: 105px;">
+            <footer class=" flex flex-col gap-1 px-1 py-3 text-decoration @container border-t">
+              <p class="text-right text-[#637588] text-base font-normal leading-normal">©The Accounting and
+                Financial
+                Reporting Council (AFRC) 2024 All rights reserved.</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+<script>
+  //登录退出
+  function toggleDropdown() {
+    var dropdown = document.getElementById('dropdown-content');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  document.addEventListener('click', function (event) {
+    var dropdown = document.getElementById('dropdown-content');
+    var bgCenter = document.getElementById('bg-center');
+
+    if (event.target !== bgCenter && event.target.closest('.bg-center') !== bgCenter) {
+      dropdown.style.display = 'none';
+    }
+  });
+
+  // 语言切换
+  function toLanguage() {
+    var toLanguage = document.getElementById('Language-content');
+    toLanguage.style.display = toLanguage.style.display === 'block' ? 'none' : 'block';
+  }
+  document.addEventListener('click', function (event) {
+    var toLanguage = document.getElementById('Language-content');
+    var LaCenter = document.getElementById('La-center');
+
+    if (event.target !== LaCenter && event.target.closest('.La-center') !== LaCenter) {
+      toLanguage.style.display = 'none';
+    }
+  });
+</script>
+
+</html>

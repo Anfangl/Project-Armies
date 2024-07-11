@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>审批内容</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #171C8E;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .approval {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .approval-number {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .submission-time {
+      color: #666;
+    }
+
+    .department {
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .approval-content {
+      margin-top: 10px;
+    }
+
+    .approval-process {
+      margin-top: 20px;
+    }
+
+    .process-step {
+      margin-bottom: 10px;
+    }
+
+    .process-step .step-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .process-step .step-status {
+      margin-top: 5px;
+    }
+
+    .approval-result {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .result-icon {
+      font-size: 48px;
+      color: #fff;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .result-icon.pending {
+      background-color: #FF6347;
+      /* 红色 */
+    }
+
+    .result-icon.approved {
+      background-color: #32CD32;
+      /* 绿色 */
+    }
+
+    .result-icon.rejected {
+      background-color: #FFA500;
+      /* 橙色 */
+    }
+
+    .new-approvals {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FF6347;
+      /* 红色 */
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>审批内容</h1>
+
+    <!-- 审批条目示例 -->
+    <div class="approval">
+      <div class="approval-number">审批编号: #123456</div>
+      <div class="submission-time">提交时间: 2024-06-27 10:00</div>
+      <div class="department">所在部门: 技术部门</div>
+      <div class="approval-content">
+        审批内容: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non justo sed libero consequat aliquet.
+      </div>
+
+      <!-- 审批流程示例 -->
+      <div class="approval-process">
+        <div class="process-step">
+          <div class="step-title">第一级审批人</div>
+          <div class="step-status">状态: <span class="result-icon pending">待审批</span></div>
+        </div>
+        <div class="process-step">
+          <div class="step-title">第二级审批人</div>
+          <div class="step-status">状态: <span class="result-icon approved">已通过</span></div>
+        </div>
+        <div class="process-step">
+          <div class="step-title">第三级审批人</div>
+          <div class="step-status">状态: <span class="result-icon rejected">已拒绝</span></div>
+        </div>
+      </div>
+
+      <!-- 审批结果示例 -->
+      <div class="approval-result">
+        审批结果: <span class="result-icon approved">✔</span>
+      </div>
+    </div>
+
+    <!-- 新审批提醒按钮 -->
+    <button class="new-approvals">3</button>
+
+  </div>
+
+</body>
+
+</html>

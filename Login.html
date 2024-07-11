@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffafa;
+            /* 白色背景 */
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            height: 9px;
+            background-color: #171C8E;
+            /* 蓝色顶部横框 */
+        }
+
+        .login-container {
+            background-color: #fff;
+            max-width: 300px;
+            padding: 40px;
+            border: 1px solid #171C8E;
+            /* 蓝色边框线 */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .login-container h2 {
+            color: #171C8E;
+            /* 蓝色标题 */
+        }
+
+        .form-input {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #555;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #171C8E;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0E123E;
+        }
+
+        .input-label {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            text-transform: capitalize;
+        }
+
+        .input-label-2 {
+            text-align: center;
+            margin-top: 3px;
+            margin-bottom: 6px;
+            display: block;
+            text-transform: capitalize;
+        }
+
+        .flex {
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            justify-content: flex-start;
+            /* 水平方向从左对齐 */
+            align-items: flex-start;
+            /* 垂直方向从顶部对齐 */
+            height: 100%;
+            /* 设置高度为100% */
+        }
+
+        .inner-flex {
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            justify-content: centstarter;
+            /* 水平居中对齐 */
+            align-items: center;
+            /* 垂直居中对齐 */
+        }
+
+        .logo-container {
+            width: 280px;
+            /* 容器的宽度 */
+            height: 80px;
+            /* 容器的高度 */
+            /* 设置背景图片 */
+            background-image: url('IMAGE/Blue-1-Logo.png');
+            /* 如果需要调整背景图片的显示方式，可以使用以下属性 */
+            background-size: 0%;
+            /* 或者 contain，根据需要调整 */
+            background-position: center center;
+            /* 居中显示 */
+            background-repeat: no-repeat;
+            /* 不重复显示 */
+        }
+
+        .logo-container img {
+            width: 100%;
+            /* 图像宽度占满容器 */
+            height: 100%;
+            /* 图像高度占满容器 */
+            object-fit: contain;
+            /* 图像适应容器尺寸 */
+        }
+
+        /* 可以根据需要进一步调整样式，比如设置容器的边框、圆角等 */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-bar"></div> <!-- 顶部蓝色横框 -->
+
+    <div class="flex login-container  text-center" style="margin-top: 100px;">
+        <!-- Logo -->
+        <div>
+            <div class="inner-flex">
+                <div class="size-4">
+                    <div class="logo-container">
+                        <img src="IMAGE/Blue-1-Logo.png" alt="Blue Logo" class="logo-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class=" flex flex-wrap justify-between gap-3 p-4 ">
+                <p class=" text-[#171C8E] tracking-light text-[22px] font-bold leading-tight min-w-72">
+                </p>
+            </div>
+            <form id="loginForm" action="#" method="POST"">
+                <label for=" username" class="input-label TEXT-[#171C8E]">Login ID</label>
+                <input type="text" id="username" name="username" class="form-input" placeholder="Enter your Login ID"
+                    required>
+                <p></p>
+                <label for="password" class="input-label TEXT-[#171C8E]">Password</label>
+                <input type="password" id="password" name="password" class="form-input"
+                    placeholder="Enter your Password" required>
+                <label for="Forgot" class="input-label-2 ">Forgot Password?</label>
+                <button type="submit" class="submit-btn">Login</button>
+                <label for="Forgot" class="input-label-2 ">Don´t have an account?<a
+                        href="dashboard-Form-PC-1.html">Create one
+                        now</a></label>
+            </form>
+        </div>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // 验证输入是否匹配预期
+            if (username === 'Administrator' && password === 'Administrator') {
+                // 如果匹配，跳转到 管理员home 页面
+                window.location.href =
+                    "file:///c:/Users/Hitpoint-Anfang/Desktop/ARMIES-POC/armies-ui/dashboard-Adminhome.html";
+            } else {
+                if (username === 'Mr.Zhao' && password === 'Mr.Zhao') {
+                    // 如果匹配，跳转到 角色home 页面
+                    window.location.href =
+                        "file:///c:/Users/Hitpoint-Anfang/Desktop/ARMIES-POC/armies-ui/dashboard-Applicationhome.html";
+                } else {
+                    if (username === 'ApproveUser Zhang' && password === 'ApproveUser Zhang') {
+                        // 如果匹配，跳转到 角色home 页面
+                        window.location.href =
+                            "file:///C:/Users/Hitpoint-Anfang/Desktop/ARMIES-POC/armies-ui/dashboard-Approvalhome.html";
+                    } else {
+                        // 如果不匹配，弹出提醒框
+                        alert('Invalid username or password. Please try again.');
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+</html>

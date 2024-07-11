@@ -1,0 +1,553 @@
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8" />
+  <title>Armies Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    /* 隐藏滚动条 */
+    .layout-content-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .bg-center {
+      position: relative;
+      /* width: 10rem;
+      /* 设置合适的宽度 */
+      /* height: 10rem;
+      设置合适的高度 */
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      /* 将下拉框放置在.bg-center下方 */
+      height: 100px;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid rgb(140, 140, 143);
+      width: 90px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      /* 调整下拉框宽度 */
+      text-align: center;
+      color: black;
+      /* 调整文字颜色 */
+      z-index: 10;
+      /* 确保位于底层内容上方 */
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #000099;
+      color: #fffafa;
+      /* 添加鼠标悬停效果 */
+    }
+
+    .La-center {
+      position: relative;
+      /* width: 10rem;
+      /* 设置合适的宽度 */
+      /* height: 10rem;
+      设置合适的高度 */
+    }
+
+    .Language-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      /* 将下拉框放置在.La-center下方 */
+      height: 91.5px;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid rgb(140, 140, 143);
+      width: 90px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      /* 调整下拉框宽度 */
+      text-align: center;
+      color: black;
+      /* 调整文字颜色 */
+      z-index: 10;
+      /* 确保位于底层内容上方 */
+    }
+
+    .Language-content a {
+      display: block;
+      padding: 0.5rem 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .Language-content a:hover {
+      background-color: #000099;
+      color: #fffafa;
+      /* 添加鼠标悬停效果 */
+      border-bottom-left-radius: 0.5px;
+      border-bottom-right-radius: 0.5px;
+    }
+
+    .logo-container {
+      width: 120px;
+      /* 容器的宽度 */
+      height: 56px;
+      /* 容器的高度 */
+      /* 设置背景图片 */
+      /* background-image: url('IMAGE/Blue-1-Logo.png'); */
+      /* 如果需要调整背景图片的显示方式，可以使用以下属性 */
+      background-size: 0%;
+      /* 或者 contain，根据需要调整 */
+      background-position: center center;
+      /* 居中显示 */
+      background-repeat: no-repeat;
+      /* 不重复显示 */
+    }
+
+    .logo-container img {
+      width: 100%;
+      /* 图像宽度占满容器 */
+      height: 100%;
+      /* 图像高度占满容器 */
+      object-fit: contain;
+      /* 图像适应容器尺寸 */
+    }
+
+    .container {
+      max-width: 800px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* 文本工具区 */
+
+    /* .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+    } */
+
+    .form-control {
+      margin-bottom: 10px;
+    }
+
+    .form-control label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-control input,
+    .form-control textarea {
+      width: 100%;
+      padding: 5px;
+    }
+
+
+    .editor-toolbar {
+      margin-bottom: 10px;
+    }
+
+    .editor-toolbar button {
+      margin-right: 5px;
+    }
+
+    .icon-button {
+      background-color: transparent;
+      /* 设置背景透明 */
+      border: none;
+      /* 移除边框 */
+      cursor: pointer;
+      /* 改变鼠标指针形状表示可点击 */
+      font-size: 1.5em;
+      /* 调整图标的大小 */
+    }
+
+    .La-center {
+      position: relative;
+      /* width: 10rem;
+      /* 设置合适的宽度 */
+      /* height: 10rem;
+      设置合适的高度 */
+    }
+
+    .Language-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      /* 将下拉框放置在.La-center下方 */
+      height: 91.5px;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid rgb(140, 140, 143);
+      width: 90px;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      /* 调整下拉框宽度 */
+      text-align: center;
+      color: black;
+      /* 调整文字颜色 */
+      z-index: 10;
+      /* 确保位于底层内容上方 */
+    }
+
+    .Language-content a {
+      display: block;
+      padding: 0.5rem 0;
+      color: black;
+      text-decoration: none;
+    }
+
+    .Language-content a:hover {
+      background-color: #000099;
+      color: #fffafa;
+      /* 添加鼠标悬停效果 */
+      border-bottom-left-radius: 0.5px;
+      border-bottom-right-radius: 0.5px;
+    }
+
+    .logo-container {
+      width: 120px;
+      /* 容器的宽度 */
+      height: 56px;
+      /* 容器的高度 */
+      /* 设置背景图片 */
+      /* background-image: url('IMAGE/Blue-1-Logo.png'); */
+      /* 如果需要调整背景图片的显示方式，可以使用以下属性 */
+      background-size: 0%;
+      /* 或者 contain，根据需要调整 */
+      background-position: center center;
+      /* 居中显示 */
+      background-repeat: no-repeat;
+      /* 不重复显示 */
+    }
+
+    .logo-container img {
+      width: 100%;
+      /* 图像宽度占满容器 */
+      height: 100%;
+      /* 图像高度占满容器 */
+      object-fit: contain;
+      /* 图像适应容器尺寸 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden"
+    style='background-color: #F2F2F2;'>
+    <div class="layout-container flex h-full grow flex-col">
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3"
+        style="background-color:	#171C8E;">
+        <div class=" flex  text-[#111517]">
+          <div class="size-4" style="position: absolute; top: 0.5px; left: 25px;">
+            <div class="logo-container">
+              <img src="IMAGE/White-1-Logo(已处理).png" alt="Blue Logo" class="logo-img">
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="La-center flex items-center gap-8" onclick="toLanguage()" id="La-center">
+            <svg t="1720166041452" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="3722" width="24" height="24">
+              <path
+                d="M512 0c282.773333 0 512 229.226667 512 512S794.773333 1024 512 1024 0 794.773333 0 512 229.226667 0 512 0z m169.749333 554.666667H342.250667c9.429333 217.792 89.813333 384 169.749333 384 79.914667 0 160.32-166.208 169.749333-384z m-424.917333 0l-169.386667 0.021333c15.658667 157.568 117.034667 289.92 256.853334 349.76-50.282667-85.738667-82.069333-210.346667-87.466667-349.76z m679.722667 0.021333h-169.386667c-5.397333 139.434667-37.184 264.021333-87.466667 349.738667 139.818667-59.797333 241.194667-192.170667 256.853334-349.738667zM344.32 119.573333l-4.736 2.048C202.176 182.378667 102.912 313.536 87.466667 469.333333h169.386666c5.397333-139.434667 37.184-264.042667 87.466667-349.76zM512 85.333333l-3.2 0.085334c-78.848 4.352-157.226667 169.045333-166.549333 383.914666h339.498666C672.32 251.562667 591.936 85.333333 512 85.333333z m167.701333 34.218667l3.136 5.44C731.306667 210.496 761.877333 332.8 767.146667 469.333333h169.386666c-15.637333-157.589333-117.034667-289.941333-256.853333-349.781333z"
+                fill="#ffffff" p-id="3723">Language</path>
+            </svg>
+            <!-- <a class="text-[#ffffff] text-sm font-medium leading-normal" href="#">繁</a>
+            <a class="text-[#ffffff] text-sm font-medium leading-normal" href="#">简</a>
+            <a class="text-sm font-medium leading-normal" href="#" style="font-weight: bold; color: #ffffff;">EN</a> -->
+
+            <!-- 悬停时显示的内容 -->
+            <div class="Language-content rounded-l" id="Language-content">
+
+              <button style="width: 90px; "><a href="#">繁</a></button><br>
+              <button style="width: 90px; "><a href="#">简</a></button><br>
+              <button style="width: 90px;font-weight: bold;color: #171C8E"><a href="#">EN</a></button>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <!-- 全局搜索 -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f2f4] text-[#111517] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#111517]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                  </path>
+                </svg>
+              </div>
+            </button>
+            <!-- 站内信 -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f2f4] text-[#111517] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 relative">
+              <a href="#">
+                <div class="text-[#111517]" data-icon="Bell" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                    viewBox="0 0 256 256">
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+                    </path>
+                  </svg>
+                </div>
+              </a>
+              <div class="absolute h-2 w-2 bg-red-500 rounded-full top-1 right-1"></div>
+            </button>
+            <!-- Help -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f0f2f4] text-[#111517] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#111517]" data-icon="Question" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z">
+                  </path>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <!-- <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+            style='background-image: url("IMAGE/icon.jpg");'>
+          </div> -->
+          <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" id="bg-center"
+            style='background-image: url("https://cdn.usegalileo.ai/stability/e8fcd217-bd88-4b8a-aaa5-a9656fb35067.png");'
+            onclick="toggleDropdown()">
+
+            <!-- 悬停时显示的内容 -->
+            <div class="dropdown-content" id="dropdown-content">
+              <div style="background-color: #000099; height: 60px; padding: 8px 26px 0;">
+                <div class="bg-center text-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  id="bg-center"
+                  style='background-image: url("https://cdn.usegalileo.ai/stability/e8fcd217-bd88-4b8a-aaa5-a9656fb35067.png"); '>
+                </div>
+              </div>
+              <button style="margin-top: 7pt; width: 90px; "><a href="Login.html">Login Out</a></button>
+
+              <!-- 可以根据需要添加更多内容 -->
+            </div>
+
+          </div>
+        </div>
+      </header>
+      <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+        <!-- 左侧菜单栏 -->
+        <div class="layout-content-container flex flex-col w-80 sticky top-0">
+          <div class="flex h-full flex-col justify-between bg-slate-50 p-4"
+            style=' background-color:#fffafa; border-top-left-radius: 15px; border-bottom-left-radius: 15px;'>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-14 mr-4"
+                  style='background-image: url("https://cdn.usegalileo.ai/stability/e8fcd217-bd88-4b8a-aaa5-a9656fb35067.png");'>
+                </div>
+                <div class="pl-2">
+                  <h1 class="text-[#0e141b] text-base font-medium leading-normal"><b>Mr.Zhao</b></h1>
+                  <p class="text-[#4e7397] text-sm font-normal leading-normal"><b>PC</b></p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2"></div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="House" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a
+                      href="dashboard-Applicationhome.html">Dashboard</a>
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#111418]" data-icon="UserPlus" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M256,136a8,8,0,0,1-8,8H232v16a8,8,0,0,1-16,0V144H200a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,256,136Zm-57.87,58.85a8,8,0,0,1-12.26,10.3C165.75,181.19,138.09,168,108,168s-57.75,13.19-77.87,37.15a8,8,0,0,1-12.25-10.3c14.94-17.78,33.52-30.41,54.17-37.17a68,68,0,1,1,71.9,0C164.6,164.44,183.18,177.07,198.13,194.85ZM108,152a52,52,0,1,0-52-52A52.06,52.06,0,0,0,108,152Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#111418] text-sm font-medium leading-normal">
+                    <a href="dashboard-Renewal.html">Renewal</a>
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="Users" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a height: calc(100vh - 15px)><a
+                        href="dashboard-ApplicationRegList.html">PIE
+                        Auditor Registration</a></p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2 rounded-xl bg-[#e7edf3]">
+                  <div class="text-[#0e141b]" data-icon="ArchiveTray" data-size="24px" data-weight="regular">
+                    <svg t="1720085687972" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                      xmlns="http://www.w3.org/2000/svg" p-id="25564" width="23" height="23">
+                      <path
+                        d="M937.154 984.333c-1.485 0-2.955-0.46-4.192-1.379l-128.85-94.949-129.726 94.786c-1.238 0.897-2.7 1.359-4.171 1.359-1.089 0-2.191-0.254-3.203-0.764-2.368-1.209-3.868-3.642-3.868-6.305v-191.509c0-2.271 1.089-4.405 2.928-5.733 1.223-0.885 2.673-1.337 4.143-1.337 0.743 0 1.498 0.121 2.22 0.361l45.813 15.172c2.977 0.855 5.21 3.579 5.21 6.794v71.362l76.624-55.959c1.244-0.906 2.708-1.359 4.171-1.359 1.471 0 2.948 0.46 4.192 1.379l75.436 55.583v-71.010c0-3.019 1.917-5.698 4.765-6.681l46.188-15.964c0.75-0.26 1.534-0.389 2.305-0.389 1.451 0 2.884 0.447 4.1 1.314 1.867 1.329 2.969 3.472 2.969 5.755v192.395c0 2.665-1.498 5.113-3.881 6.314-0.996 0.51-2.085 0.764-3.173 0.764zM134.749 951.301c-60.178 0-109.137-48.959-109.137-109.147v-694.208c0-60.188 48.959-109.153 109.137-109.153h605.566c60.199 0 109.173 48.966 109.173 109.153v216.558c0 3.902-3.162 7.069-7.069 7.069h-44.993c-3.909 0-7.069-3.168-7.069-7.069v-216.553c0-27.586-22.447-50.034-50.026-50.034h-605.573c-27.586 0-50.034 22.447-50.034 50.034v694.194c0 27.58 22.447 50.026 50.034 50.026h470.241c3.909 0 7.069 3.162 7.069 7.069v44.987c0 3.909-3.162 7.069-7.069 7.069h-470.247zM803.66 800.678c-112.142 0-203.386-91.229-203.386-203.373s91.238-203.38 203.386-203.38c112.151 0 203.401 91.238 203.401 203.38-0.005 112.142-91.252 203.373-203.401 203.373zM803.66 454.259c-78.879 0-143.053 64.173-143.053 143.046 0 78.879 64.173 143.053 143.053 143.053s143.053-64.173 143.053-143.053c0-78.873-64.173-143.046-143.053-143.046zM193.537 760.867c-3.902 0-7.069-3.162-7.069-7.069v-49.213c0-3.909 3.168-7.069 7.069-7.069h356.111c3.909 0 7.069 3.162 7.069 7.069v49.213c0 3.909-3.162 7.069-7.069 7.069h-356.111zM803.691 685.213c-48.471 0-87.913-39.436-87.913-87.907s39.436-87.907 87.913-87.907c48.465 0 87.907 39.436 87.907 87.907s-39.442 87.907-87.907 87.907zM803.691 546.628c-27.94 0-50.669 22.737-50.669 50.677s22.731 50.677 50.669 50.677c27.934 0 50.663-22.737 50.663-50.677s-22.731-50.677-50.663-50.677zM193.537 604.354c-3.902 0-7.069-3.162-7.069-7.069v-49.213c0-3.909 3.168-7.069 7.069-7.069h356.111c3.909 0 7.069 3.162 7.069 7.069v49.213c0 3.909-3.162 7.069-7.069 7.069h-356.111zM193.537 449.099c-3.902 0-7.069-3.168-7.069-7.069v-49.213c0-3.902 3.168-7.069 7.069-7.069h356.111c3.909 0 7.069 3.168 7.069 7.069v49.213c0 3.902-3.162 7.069-7.069 7.069h-356.111zM193.537 292.578c-3.902 0-7.069-3.168-7.069-7.069v-49.206c0-3.902 3.168-7.069 7.069-7.069h488.028c3.909 0 7.069 3.168 7.069 7.069v49.206c0 3.902-3.162 7.069-7.069 7.069h-488.028z"
+                        fill="#272635" p-id="25565"></path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a
+                      href="dashboard-Certificate.html">Certificate</a></p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="UsersThree" data-size="24px" data-weight="fill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal"><a href="#">Questionnaire</a></p>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2">
+                  <div class="text-[#0e141b]" data-icon="ArchiveTray" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                      viewBox="0 0 256 256">
+                      <path
+                        d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,16V152h-28.7A15.86,15.86,0,0,0,168,156.69L148.69,176H107.31L88,156.69A15.86,15.86,0,0,0,76.69,152H48V48Zm0,160H48V168H76.69L96,187.31A15.86,15.86,0,0,0,107.31,192h41.38A15.86,15.86,0,0,0,160,187.31L179.31,168H208v40ZM90.34,125.66a8,8,0,0,1,11.32-11.32L120,132.69V72a8,8,0,0,1,16,0v60.69l18.34-18.35a8,8,0,0,1,11.32,11.32l-32,32a8,8,0,0,1-11.32,0Z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-[#0e141b] text-sm font-medium leading-normal">PROFILE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右侧内容区-->
+        <div
+          class="layout-content-container flex flex-col max-w-[960px] flex-1 border border-[#808080] p-30 overflow-y-auto"
+          style="position: sticky; top: 0; height: calc(100vh - 18px);background-color: #fffafa;">
+          <div style="height: 980px;;background-color: #fffafa;">
+            <div><img width="362" height="90" alt="image" src="Form_PIE-1/Image_001.jpg" /></div>
+            <div class="mb-4" style="margin-left: 650px; font-size: 15px;">
+              <h2>Registration number: P45000</h2>
+            </div>
+            <div class="mb-4 text-[#171C8E]" style="margin: 50px 0px 10px 220; font-size: 32px;">
+              <b>
+
+                CERTIFICATE OF REGISTRATION
+              </b>
+            </div>
+            <div style="margin: 50px 0px 30px 370px; font-size:15px;">This is to certify that</div>
+            <div style="margin-left: 350px; font-size:25px; color: #171C8E;">
+              Name : Mr.Zhao
+
+
+            </div>
+            <div style="margin-left: 350px; font-size:25px; color: #171C8E;">
+              PC no : 109832
+            </div>
+            <div style="margin: 30px 0px 30px 390px; font-size:15px;">is registered as a</div>
+            <div style="margin:25px 0px 20px 250px; font-size: 25px;color: #171C8E;">PRACTISING CERTIFICATE (FORM PC-1)
+            </div>
+            <div style="width: 560px;margin: 30px 0px 30px 205px; font-size:15px;">under the Accounting and Financial
+              Reporting
+              Council Ordinance (Cap. 588)
+              with effect from 1 January 2024</div>
+            <div style="margin:250px 0px 20px 80px; font-size: 15px;">Date of expiry: 31 December 2024</div>
+            <div style="margin:5px 0px 20px 80px; font-size: 15px;">Head of Policy, Registration and Oversight</div>
+            <div style="margin-top:100px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+<script>
+  //登录退出
+  function toggleDropdown() {
+    var dropdown = document.getElementById('dropdown-content');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  document.addEventListener('click', function (event) {
+    var dropdown = document.getElementById('dropdown-content');
+    var bgCenter = document.getElementById('bg-center');
+
+    if (event.target !== bgCenter && event.target.closest('.bg-center') !== bgCenter) {
+      dropdown.style.display = 'none';
+    }
+  });
+
+
+
+  // 语言切换
+  function toLanguage() {
+    var toLanguage = document.getElementById('Language-content');
+    toLanguage.style.display = toLanguage.style.display === 'block' ? 'none' : 'block';
+  }
+  document.addEventListener('click', function (event) {
+    var toLanguage = document.getElementById('Language-content');
+    var LaCenter = document.getElementById('La-center');
+
+    if (event.target !== LaCenter && event.target.closest('.La-center') !== LaCenter) {
+      toLanguage.style.display = 'none';
+    }
+  });
+</script>
+
+</html>
